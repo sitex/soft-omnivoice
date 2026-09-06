@@ -780,6 +780,8 @@ class OmniVoice(PreTrainedModel):
 
         generated_audio = fade_and_pad_audio(
             generated_audio,
+            pad_duration=0.05,
+            fade_duration=0.01,
             sample_rate=self.sampling_rate,
         )
         return generated_audio
